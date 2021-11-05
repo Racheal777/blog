@@ -2,6 +2,8 @@
 
 {% block title%} MY BLOG {% endblock%}
 
+
+
 {% block content%}
 <h1>My Blog</h1>
 
@@ -11,8 +13,10 @@
 <h2>
     <a href = "{{ post.get_absolute_url }}">
         {{ post.title }}
+        
     </a>
 </h2>
+<p class = "tags">Tags: {{ post.tags.all|join:","}}</p>
 <p class = "date">
     Published {{ post.publish }} by {{post.author}}
 </p>
